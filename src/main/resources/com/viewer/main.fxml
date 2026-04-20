@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.viewer.MainController"
+      spacing="10" style="-fx-padding: 15;">
+
+    <!-- Счётчик и фильтр -->
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Позиция:" style="-fx-font-size:14"/>
+        <Label fx:id="counterLabel" text="0 из 0" style="-fx-font-size:14"/>
+        <Label text="Фильтр:" style="-fx-font-size:14"/>
+        <ComboBox fx:id="filterBox" onAction="#onFilterChanged"/>
+    </HBox>
+
+    <!-- Изображение -->
+    <ImageView fx:id="imageView"
+               fitWidth="600" fitHeight="400"
+               preserveRatio="true"/>
+
+    <!-- Кнопки навигации -->
+    <HBox spacing="8" alignment="CENTER">
+        <Button text="Первый"    onAction="#onFirst" style="-fx-font-size:14"/>
+        <Button text="Назад"     onAction="#onPrev"  style="-fx-font-size:14"/>
+        <Button text="Вперёд"    onAction="#onNext"  style="-fx-font-size:14"/>
+        <Button text="Последний" onAction="#onLast"  style="-fx-font-size:14"/>
+    </HBox>
+
+    <!-- Анимация -->
+    <HBox spacing="8" alignment="CENTER">
+        <Label text="Эффект перехода:" style="-fx-font-size:14"/>
+        <ComboBox fx:id="transitionBox"/>
+        <Button text="Авто-просмотр" onAction="#onAuto"/>
+    </HBox>
+
+    <!-- Информация о файле -->
+    <Label fx:id="infoLabel" wrapText="true"
+           style="-fx-font-size:11; -fx-text-fill:gray"/>
+
+</VBox>
